@@ -48,8 +48,8 @@ export default {
             <a :href="path" class="blog-post__link">{{ title }}</a>
         </h2>
         <span class="blog-post__time" v-if="tags.length > 0">Tags:</span>
-        <ul v-for="tag in tags" class="blog-post__tags">
-          <li>
+        <ul class="blog-post__tags-list">
+          <li v-for="tag in tags" class="blog-post__tags">
             <button @click="$emit('updateSelectedTag', tag)">{{ tag }}</button>
           </li>
         </ul>
@@ -93,16 +93,21 @@ primary-color = #22AAFF
     margin-bottom: 0;
 }
 
-.blog-post__tags {
+.blog-post__tags-list {
     list-style: none; 
     display: inline-block;
     padding: 0;
     margin-bottom: 10px;
 }
 
-.blog-post__tags li {
+.blog-post__tags {
     display: inline-block;
     padding: 5px;    
+
+}
+
+.blog-post__tags li {
+    display: inline-block;
 }
 
 .blog-post__tags button {

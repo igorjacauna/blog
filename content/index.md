@@ -1,19 +1,16 @@
 ---
 title: Home
 home: true
-heroText: Hero
-tagline: Some tagline
-actionText: Go To Github
-actionLink: https://github.com/bencodezen/vuepress-blog-boilerplate
+heroText: Ígor Jacaúna
+tagline: Progamador e músico. Não necessariamente nessa ordem
+actionText: Acessar blog
+actionLink: /blog/
 features:
 - 
-    title: Feature 1
-    details: Feature Details
+    title: Música
+    details: Desde os 6 anos de idade envolvido com música e agora levo como um passatempo
 - 
-    title: Feature 2
-    details: Feature Details
-- 
-    title: Feature 3
-    details: Feature Details
-footer: This is a footer
+    title: Computação
+    details: Desenvolvedor de software e soluções online. Atualmente trabalhando na FPF Tech como Analista de sistemas
+footer: © Igor Jacaúna 2019. Feito com VuePress.
 ---

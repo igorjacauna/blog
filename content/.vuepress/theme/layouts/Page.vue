@@ -10,7 +10,7 @@
         v-if="editLink"
       >
         <a
-          href="https://github.com/bencodezen/bencodezen/issues/new"
+          href="https://github.com/igorjacauna/blog/issues/new"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -71,7 +71,15 @@ export default {
   computed: {
     lastUpdated () {
       if (this.$page.lastUpdated) {
-        return new Date(this.$page.lastUpdated).toLocaleString(this.$lang)
+        const dateFormat = new Date(this.$page.lastUpdated)
+
+        const options = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        } 
+        
+        return `${dateFormat.toLocaleDateString(this.$lang, options)}, ${dateFormat.toLocaleTimeString(this.$lang)}`
       }
     },
 

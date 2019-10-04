@@ -3,14 +3,20 @@
     <div class="blog__header">
       <p class="publish-date"><time :datetime="$frontmatter.date">{{ publishDate }}</time></p>
       <h1 class="blog__title">{{ $page.title }}</h1>
+      <span>Tags: </span>
+      <ul class="blog-post__tags-list">
+          <li v-for="tag in $frontmatter.tags" class="blog-post__tags">
+            {{ tag }}
+          </li>
+        </ul>
     </div>
 
     <Content custom />
 
     <section class="share">
-      <h2>Share</h2>
+      <h2>Compartilhar</h2>
       <a class="share__button" 
-        :href="`https://twitter.com/intent/tweet?text=${urlPostTitle} by @bencodezen ${$themeConfig.domain}${$page.path}`"
+        :href="`https://twitter.com/intent/tweet?text=${urlPostTitle} by @ijacauna ${$themeConfig.domain}${$page.path}`"
         target="_blank"
       >
         <i class="fab fa-twitter"></i> Tweet
@@ -23,7 +29,7 @@
         v-if="editLink"
       >
         <a
-          href="https://github.com/bencodezen/bencodezen/issues/new"
+          href="https://github.com/igorjacauna/blog/issues/new"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -245,9 +251,10 @@ function find (page, items, offset) {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 @import '../styles/config.styl'
 @require '../styles/wrapper.styl'
+primary-color = #22AAFF
 
 .blog {
   @extend $wrapper
@@ -259,6 +266,32 @@ function find (page, items, offset) {
 
 .blog__title {
   margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #eaecef;
+}
+
+.blog-post__tags-list {
+  display: inline-block;
+  padding: 0;
+}
+
+.blog-post__tags {
+  display: inline-block;
+  margin: 5px;
+}
+
+.blog-post__tags {
+    display: inline-block;
+    padding: 0 25px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    border-radius: 25px;
+    border: 1px solid;
+    border-color: primary-color;
+    background-color: #fff;
+    color: primary-color;
 }
 
 .publish-date {

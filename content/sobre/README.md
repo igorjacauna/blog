@@ -1,4 +1,4 @@
-# About
+# Sobre
 
 I am a self-taught developer whose origin story harkens back to the days when I was a naive kid building terrible websites like “Fortune Cookie Universe” on Angelfire with numerous GIFs and marquee elements and hacking themes on Xanga and LiveJournal. After a few detours and becoming an I/O Psychologist, I would finally connect the dots and bring his passion for technology and user experience together. I am currently a Fullstack Engineer on the Meltano team at GitLab.
 

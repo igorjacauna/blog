@@ -1,64 +1,50 @@
 module.exports = {
-	title: 'BenCodeZen',
+	title: 'Igor Jacaúna',
 	dest: './public',
+	locales: {
+		/* This is where you place your general locale config */
+		'/': {
+		  lang: 'pt-BR',
+		}
+	},
 	themeConfig: {
-		domain: 'https://www.bencodezen.io',
-		repo: 'https://github.com/bencodezen/bencodezen',
+		domain: 'https://www.igorjacauna.com.br',
+		repo: 'https://github.com/igorjacauna/blog',
 		repoLabel: 'Repo',
 		docsDir: 'content',
 		editLinks: true,
-		logo: '/bencodezen-logo.png',
-		lastUpdated: 'Last Updated',
-		editLinkText: 'Open a new issue',
+		lastUpdated: 'Última atualização',
+		editLinkText: 'Abrir um bug',
 		nav: [
 			{ text: 'Home', link: '/' },
 			{ text: 'Blog', link: '/blog/index.html' },
-			{ text: 'Learn', link: '/learn/index.html' },
-			{
-				text: 'About',
-				items: [
-					{ text: 'Me', link: '/about/index.html' },
-					{ text: 'Uses', link: '/uses/index.html' },
-					{ text: 'Media Log', link: '/about/media-log/index.html'}
-				]
-			},
-			{ text: 'Contact', link: '/contact/index.html' }
+			// {
+			// 	text: 'Sobre',
+			// 	link: '/sobre/index.html'
+			// },
+			// { text: 'Contato', link: '/contato/index.html' }
 		],
 		user: {
 			socialMedia: [
 				{
 					name: "Twitter",
-					href: "https://twitter.com/bencodezen",
+					href: "https://twitter.com/ijacauna",
 					icon: "twitter"
 				},
 				{
-					name: "Twitch",
-					href: "https://www.twitch.tv/bencodezen",
-					icon: "twitch"
+					name: "Facebook",
+					href: 'https://facebook.com/igorjacauna',
+					icon: "facebook"
 				},
 				{
 					name: "GitLab",
-					href: "https://gitlab.com/bencodezen",
+					href: "https://gitlab.com/igorjacauna",
 					icon: "gitlab"
 				},
 				{
 					name: "GitHub",
-					href: "https://github.com/bencodezen",
+					href: "https://github.com/igorjacauna",
 					icon: "github"
-				},
-				{
-					name: "CodePen",
-					href: "https://codepen.io/bencodezen/",
-					icon: "codepen"
-				},
-				{
-					name: "StackOverflow",
-					href: "https://stackoverflow.com/users/5100020/bencodezen",
-					icon: "stack-overflow"
-				},
-				{
-					name: "Notist",
-					href: "https://noti.st/bencodezen"
 				}
 			]
 		}
@@ -67,14 +53,14 @@ module.exports = {
 		[
 			'@vuepress/google-analytics',
 			{
-				ga: 'UA-92645815-1'
-			}	
+				ga: ''
+			}
 		],
 		[
 			'vuepress-plugin-rss',
 			{
 				base_url: '/',
-				site_url: 'https://www.bencodezen.io',
+				site_url: 'https://www.igorjacauna.com.br',
 				filter: frontmatter => frontmatter.date <= new Date(),
 				count: 20
 			}
