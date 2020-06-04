@@ -12,5 +12,5 @@ features:
 - 
     title: Computação
     details: Desenvolvedor de software e soluções online. Atualmente trabalhando na FPF Tech como Analista de sistemas
-footer: © Igor Jacaúna 2019. Feito com VuePress.
+footer: © Igor Jacaúna 2020. Feito com VuePress.
 ---

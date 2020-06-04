@@ -66,10 +66,10 @@ export default {
           <i class="fas fa-info-circle"></i>
         </strong>
         <span class="tooltip-ex-text tooltip-ex-bottom">
-          Everything here is written via the stream of consciousness writing technique and should be treated as a rough draft at best (i.e., very little editing). However, I promise you one thing:
+          Tudo aqui é escrito através da técnica de escrita do fluxo da consciência e deve ser tratado como um rascunho na melhor das hipóteses (isto é, muito pouca edição). No entanto, prometo uma coisa:
           <strong>
-            <em>none of the posts below are meant to be offensive or malicious in any way</em>
-          </strong>. So if you read something that you feel is offensive, please let me know and I'll be happy to take the time to rewrite it!
+            <em>nenhuma das postagens abaixo deve ser ofensiva ou maliciosa de forma alguma</em>
+          </strong>. Portanto, se você ler algo que considera ofensivo, entre em contato e ficarei feliz em reescrevê-lo!
         </span>
       </div>
     </div>
