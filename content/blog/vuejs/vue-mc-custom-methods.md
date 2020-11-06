@@ -40,7 +40,7 @@ Pra resolver isso, basta chamar `request()` e não `createRequest()` passando os
 ```javascript
 export class MyModel extends Model {
   myMethod() {
-    return this.request({
+    return this.createRequest({
         // params, method, url, etc...
     }, this.onFetch, this.onFetchSuccess, this.onFetchFailure)
   }
@@ -49,7 +49,7 @@ export class MyModel extends Model {
 
 export class MyCollection extends Collection {
   myMethod() {
-    return this.request({
+    return this.createRequest({
         // params, method, url, etc...
     }, this.onFetch, this.onFetchSuccess, this.onFetchFailure)
   }

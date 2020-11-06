@@ -23,7 +23,6 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
     "@vuepress/plugin-google-analytics": "^1.1.0",
-    "firebase-tools": "^7.2.2",
     "vuepress": "^1.0.3",
     "vuepress-plugin-janitor": "^1.0.0",
     "vuepress-plugin-reading-time": "^0.1.1",

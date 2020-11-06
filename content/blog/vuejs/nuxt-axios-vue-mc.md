@@ -91,13 +91,13 @@ Eu particularmente sempre crio uma classe base para `Model` e `Collection` a ser
 
 ```javascript
 export class BaseModel extends Model {
-  getRequest(config) {
+  createRequest(config) {
     return new MyRequest(config)
   }
 }
 
 export class BaseCollection extends Collection {
-  getRequest(config) {
+  createRequest(config) {
     return new MyRequest(config)
   }
 }
