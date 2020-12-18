@@ -1,0 +1,10 @@
+{
+  "title": "Apenas mais um blog",
+  "url": "igorjacauna.com.br",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "github": "igorjacauna/blog",
+  "twitter": "ijacauna"
+}
