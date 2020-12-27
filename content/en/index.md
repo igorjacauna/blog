@@ -10,10 +10,12 @@ Sou Parintinense, atualmente morando em Manaus. Casado e com uma filha de 4 pata
 
 Atuo como desenvolvedor desde 2011. Sou formado em Ciência da Computação pela FUCAPI e trabalho como Analista de Sistemas na [Fundação Paulo Feitoza](https://fpftech.com).
 
+<!--more-->
+
 #### Algumas aplicações que fiz de forma voluntária como:
 
-- [e-bingo](https://e-bingo.web.app) - Um pequeno app para brincar de bingo online
-- [e-bingo](https://i-bingo.web.app) - Uma página para realizar sorteios de bingo
+- [e-bingo](https://e-bingo.web.app) - Um pequeno app para brincar de bingo online com cartelas geradas automaticamente e painel de sorteio 
+- [i-bingo](https://i-bingo.web.app) - Uma página apenas com painel de sorteio, para usar com cartelas físicas
 - [Chá de revelação](https://bingo-cha-bb-tiago-laiza.web.app/) - Uma brincadeira onde as pessoas tentavam adivinhar o sexo do bebê de um amigo (A votação era atualizada em tempo real)
 - [Campus PIB-PIN](https://campus.pibpin.org) - Um pequeno portal para gerenciamento da igreja que congrego
 - [Backup](https://backup.pibpin.org) - Aplicação para facilitar cadastro e organização de retorno aos cultos após a pandemia de 2020
@@ -24,7 +26,7 @@ Atuo como desenvolvedor desde 2011. Sou formado em Ciência da Computação pela
 
 - Em 2011 fui estagiário de uma extinta secretaria municipal de Manaus, onde ajudei na atualização da versão do Wordpress de um portal
 
-- Quando entrei na FPF em 2012, foi para trabalhar com C++, mais especificamente Visual C++ desenvolvendo uma plataforma de publicidade embarcada em desktops e notebooks
+- Quando entrei na FPF em 2012, foi para trabalhar com C++, mais especificamente Visual C++ desenvolvendo uma plataforma de publicidade embarcada em desktops e notebooks. Passei a liderar o projeto em 2014 e atualmente desenvolvo e mantenho sozinho o projeto com prospecção de novas atualizações e mudança de arquitetura.
 
 - Estive em um projeto para Android que era um canal de aplicativos gratuitos que podiam ser baixados e instalados no smartphone
 
@@ -32,7 +34,7 @@ Atuo como desenvolvedor desde 2011. Sou formado em Ciência da Computação pela
 
 - Participei em um projeto orientado a micro-serviços com Docker, Docker Compose e CI
 
-- Ajudei no desenvolvimento de um módulo em um sistema de varejo
+- Ajudei no desenvolvimento de um módulo em um sistema de varejo da maior loja de departamento da região Norte
 
 - Alguns outros projetos de controle de qualidade para fábricas do distrito industrial de Manaus utilizando REST API e integrações com sistemas legados
 
