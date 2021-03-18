@@ -1,11 +1,29 @@
-export default {
-  search: {
-    placeholder: 'Procurar por post (Pressione "/" para focar a busca)'
+module.exports = {
+  light: 'Claro',
+  dark: 'Escuro',
+  meta: {
+    title: 'Blog',
+    description: '',
   },
-  toc: {
-    title: 'Nesse post'
+  contribute: {
+    title: 'Colaboradores',
+    blog: 'Achou algum erro ou problema ou quer colaborar?',
+    edit_on_github: 'Editar essa página no GitHub!',
   },
-  article: {
-    github: 'Edit this page on GitHub'
+  pageNotFound: {
+    title: 'Nada encontrado',
+  },
+  footer: {
+    links: {
+      social: {
+        title: 'Social',
+      },
+      built: {
+        title: 'Construído com',
+      },
+    },
+  },
+  welcome: {
+    text: 'Você está olhando o tema padrão'
   }
 }
