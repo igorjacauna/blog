@@ -1,10 +1,11 @@
-import theme from '@jsilva-pt/nuxt-content-theme-blog'
-import { footerLinks } from './blog.settings'
+import blog from './blog.config'
+import { footerLinks } from './blog.links'
 
-const baseUrl = 'https://igorjacauna.github.io'
+const baseUrl = 'https://igorjacauna.com.br'
 
 const publicRuntimeConfig = {
-  baseUrl: 'https://igorjacauna.github.io',
+  showSocialIconsOnHeader: true,
+  baseUrl,
 
   logoLight: '/logo-light.svg',
   logoDark: '/logo-dark.svg',
@@ -13,10 +14,16 @@ const publicRuntimeConfig = {
   githubRepository: 'igorjacauna',
   githubMainBranch: 'master',
 
+  twitterUsername: 'ijacauna',
+  linkedinUsername: 'igorjacauna',
+
+  sharingBlogPostEnabled: true,
+  sharingDefaultHashtags: [],
+
   footerLinks,
 }
 
-export default theme({
+export default blog({
   feedOptions: {
     title: 'Blog',
     description: '',

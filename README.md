@@ -2,6 +2,8 @@
 
 ## Setup
 
+Um blog sobre programação
+
 Install dependencies:
 
 ```bash

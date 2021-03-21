@@ -1,8 +1,7 @@
 ---
 title: Markdown examples
-description: Headings, links, lists, images and code blocks examples
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/1200px-Markdown-mark.svg.png
-publishedAt: 2020-12-18
+createdAt: 2020-12-18
 tags:
   - Headings
   - Links

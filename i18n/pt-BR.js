@@ -13,6 +13,9 @@ module.exports = {
   pageNotFound: {
     title: 'Nada encontrado',
   },
+  toc: {
+    title: "Nesse artigo"
+  },
   footer: {
     links: {
       social: {
@@ -25,5 +28,6 @@ module.exports = {
   },
   welcome: {
     text: 'Você está olhando o tema padrão'
-  }
+  },
+  backToList: "Voltar para lista"
 }
