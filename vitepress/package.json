@@ -1,0 +1,17 @@
+{
+  "name": "blog-vitepress",
+  "version": "1.0.0",
+  "description": "Blog",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.1",
+    "vitepress": "^1.0.0-alpha.4",
+    "vue": "^3.2.37"
+  }
+}
