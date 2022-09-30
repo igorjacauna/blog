@@ -231,4 +231,5 @@ const transformElement = computed(() => {
 E é isso!
 
 > Créditos ao [LearnVue](https://learnvue.co/)
+>
 > Conteúdo extraído do vídeo: https://www.youtube.com/watch?v=AVMNjbKdU1M
