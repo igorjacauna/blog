@@ -6,6 +6,13 @@ name: Deploy to Firebase Hosting on push
   push:
     branches:
       - master
+    paths:
+      - vitepress
+
+defaults:
+  run:
+    working-directory: ./vitepress
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
