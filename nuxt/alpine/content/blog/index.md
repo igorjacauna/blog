@@ -1,0 +1,10 @@
+---
+title: 'Blog'
+layout: 'page'
+---
+
+::articles-list
+---
+path: blog
+---
+::
