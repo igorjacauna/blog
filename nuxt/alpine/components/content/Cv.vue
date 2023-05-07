@@ -107,13 +107,13 @@ const social = [
           Esses projetos estão mais para prova de conceitos e busca por melhoria de processos e DX (Developer Experience) onde quer que eu esteja trabalhando.
         </p>
         <p>
-          Tenho projetos publicados que me ajudam a construir novas coisas, são mais para ferramentas que poupam tempo como:
+          Tenho projetos publicados que me ajudam a construir novas coisas, são ferramentas que poupam tempo como:
         </p>
         <p>
           <pre>@igorjacauna/eslint-config</pre> contém regras de ESLint que costumo usar. 
         </p>
         <p>
-          <pre>@spalla-dev/starter</pre> que é um prompt para criar proojetos rapidamente a partir de templates presente no repositório.
+          <pre>@spalla-dev/starter</pre> que é um prompt para criar projetos rapidamente a partir de templates.
         </p>
       </article>
       <article class="card experience">
