@@ -100,23 +100,19 @@ const social = [
     <main>
       <article class="card about">
         <h2>Sobre</h2>
-        <br>
         <p>
-          Trabalho programação desde 2010 e nos meus projetos pessoais hoje trabalho com Vite, React, Vue, Nuxt, Tauri, Vitest e o que mais tiver de novo e que possa melhorar o desenvolvimento.
+          Trabalho com programação desde meados de 2010 e nos meus projetos pessoais hoje trabalho com Vite, React, Vue, Nuxt, Tauri, Vitest e o que mais tiver de novo e que possa melhorar o desenvolvimento.
         </p>
-        <br>
         <p>
           Esses projetos estão mais para prova de conceitos e busca por melhoria de processos e DX (Developer Experience) onde quer que eu esteja trabalhando.
         </p>
-        <br>
         <p>
           Tenho projetos publicados que me ajudam a construir novas coisas, são mais para ferramentas que poupam tempo como:
         </p>
-        <br>
         <p>
           <pre>@igorjacauna/eslint-config</pre> contém regras de ESLint que costumo usar. 
-          <br>
-          <br>
+        </p>
+        <p>
           <pre>@spalla-dev/starter</pre> que é um prompt para criar proojetos rapidamente a partir de templates presente no repositório.
         </p>
       </article>
@@ -182,6 +178,10 @@ const social = [
   grid-template-columns: 1fr 2fr;
   gap: 12px;
 
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
   h1 {
     font-size: 1.3em;
     font-weight: 600;
@@ -195,6 +195,12 @@ const social = [
   h3 {
     font-size: .8em;
     color: var(--cv-text-2);
+  }
+
+  article {
+    p {
+      margin: 16px;
+    }
   }
   
   .secondary-text {
