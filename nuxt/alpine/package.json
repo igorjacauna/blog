@@ -9,10 +9,10 @@
     "preview": "nuxi preview"
   },
   "devDependencies": {
-    "@nuxt-themes/alpine": "^1.5.0",
+    "@nuxt-themes/alpine": "^1.6.4",
     "@nuxt/devtools": "^0.4.5",
     "@vueuse/core": "^10.1.2",
-    "nuxt": "3.3.3",
+    "nuxt": "3.7.4",
     "nuxt-icon": "^0.4.0",
     "theme-colors": "^0.0.5"
   }
