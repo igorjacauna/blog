@@ -27,7 +27,7 @@ export default defineAppConfig({
       message: 'Redes sociais' // string that will be displayed in the footer (leave empty or delete to disable)
     },
     socials: {
-      twitter: 'ijacauna',
+      twitter: '',
       github: 'igorjacauna',
       linkedin: {
         icon: 'uil:linkedin',
