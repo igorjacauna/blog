@@ -1,1 +1,0 @@
-import{k as t,c as a,e as s,f as n,a8 as o}from"./CtBPwxmq.js";const c={},r={class:"table-wrapper"};function _(e,d){return a(),s("div",r,[n("table",null,[o(e.$slots,"default",{},void 0,!0)])])}const f=t(c,[["render",_],["__scopeId","data-v-e3427f93"]]);export{f as default};

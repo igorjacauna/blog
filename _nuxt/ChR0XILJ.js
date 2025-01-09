@@ -1,0 +1,1 @@
+import{k as t,c as n,e as o,a8 as c}from"./CTpVfJSI.js";const r={};function a(e,s){return n(),o("td",null,[c(e.$slots,"default",{},void 0,!0)])}const d=t(r,[["render",a],["__scopeId","data-v-66906118"]]);export{d as default};
