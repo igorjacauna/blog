@@ -24,9 +24,6 @@ jobs:
   # Build job
   build-and-deploy:
     runs-on: ${{ matrix.os }}
-    defaults:
-      run:
-        working-directory: nuxt/alpine
 
     strategy:
       matrix:
@@ -40,7 +37,7 @@ jobs:
       - name: Identify package manager
         id: pkgman
         run: |
-          cache=`[ -f "nuxt/alpine/pnpm-lock.yaml" ] && echo "pnpm" || ([ -f "nuxt/alpine/package-lock.json" ] && echo "npm" || ([ -f "nuxt/alpine/yarn.lock" ] && echo "yarn" || echo ""))`
+          cache=`[ -f "pnpm-lock.yaml" ] && echo "pnpm" || ([ -f "package-lock.json" ] && echo "npm" || ([ -f "yarn.lock" ] && echo "yarn" || echo ""))`
           package_manager=`[ ! -z "$cache" ] && echo "$cache" || echo "pnpm"`
           echo "cache=$cache" >> $GITHUB_OUTPUT
           echo "package_manager=$package_manager" >> $GITHUB_OUTPUT
@@ -78,5 +75,3 @@ jobs:
         # Deployment job
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: nuxt/alpine/.output/public

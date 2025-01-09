@@ -1,4 +1,12 @@
-
+node_modules
+*.iml
+.idea
+*.log*
+.nuxt
+.vscode
 .DS_Store
-
-vitepress/.firebase/
+coverage
+dist
+sw.*
+.env
+.output
