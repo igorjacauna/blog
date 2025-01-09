@@ -323,7 +323,7 @@ No caso do Firebase, é necessário "desligar" certos listeners quando saímos d
 
 ### Chat
 
-A nossa última página, o chat em si. Pra entender o nome do arquivo, sugiro ler [esse artigo](/blog/Vue/diferentes-rotas-nuxt)
+A nossa última página, o chat em si. Pra entender o nome do arquivo, sugiro ler [esse artigo](/blog/vue/diferentes-rotas-nuxt)
 
 ```vue [pages/chat/_id.vue]
 <template>
