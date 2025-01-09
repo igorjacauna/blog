@@ -1,0 +1,1 @@
+import{k as t,c as n,e as c,a8 as o}from"./CtBPwxmq.js";const a={};function r(e,s){return n(),c("thead",null,[o(e.$slots,"default",{},void 0,!0)])}const d=t(a,[["render",r],["__scopeId","data-v-c139b761"]]);export{d as default};
