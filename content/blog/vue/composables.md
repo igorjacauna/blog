@@ -7,19 +7,19 @@ layout: article
 
 ## Composition API
 
-Desde que o Evan You anunciou a [`Composition API`](https://vuejs.org/guide/extras/composition-api-faq.html) muitos _devs_  estavam empolgados e outros confusos e outros simplesmente não aceitavam a ideia.
+Desde que o Evan You anunciou a [`Composition API`](https://vuejs.org/guide/extras/composition-api-faq.html) muitos *devs* estavam empolgados e outros confusos e outros simplesmente não aceitavam a ideia.
 
 Mas acontece que a `Composition API` veio e agora todos estão felizes com a facilidade que ela traz no desenvolvimento principalmente de grandes aplicações com Vue.
 
 Quem conhece o meio `React` vai ver uma semelhança da `Composition API` do `Vue` com os `Custom Hooks` do `React`. Mas no Vue tem algumas [diferenças](https://vuejs.org/guide/extras/composition-api-faq.html#comparison-with-react-hooks) que melhoram a experiência de desenvolvimento.
 
-Para ajudar, a ideia da `Composition API` é podermos separar funcionalidades do componente em funções que simplesmente podem ser importadas. Assim temos um grande poder de reutilização de código trazendo assim a possibilidade de _compor_  um componente conforme vamos importando as funções e usamos no componente.
+Para ajudar, a ideia da `Composition API` é podermos separar funcionalidades do componente em funções que simplesmente podem ser importadas. Assim temos um grande poder de reutilização de código trazendo assim a possibilidade de *compor* um componente conforme vamos importando as funções e usamos no componente.
 
 ## Composable
 
-E quando separamos essas funcionalidades em funções, damos o nome para cada função de [_composable_](https://vuejs.org/guide/reusability/composables.html).
+E quando separamos essas funcionalidades em funções, damos o nome para cada função de [*composable*](https://vuejs.org/guide/reusability/composables.html).
 
-Por definição, as funções _composable_  tem um padrão no nome que é `use<Funcionalidade>`, por exemplo, `useMouse`.
+Por definição, as funções *composable* tem um padrão no nome que é `use<Funcionalidade>`, por exemplo, `useMouse`.
 
 ### Quando escrever um?
 
@@ -39,7 +39,7 @@ export default function formatDate(date: Date) {
 };
 ```
 
-Inicialmente, pensamos: "Vou transformar em um _composable_ chamado `useFormatDate` e reutilizar onde quiser"
+Inicialmente, pensamos: "Vou transformar em um *composable* chamado `useFormatDate` e reutilizar onde quiser"
 
 ```ts
 export default function useFormatDate() {
@@ -53,7 +53,7 @@ export default function useFormatDate() {
 };
 ```
 
-Assim posso usar nos componentes como um _composable_
+Assim posso usar nos componentes como um *composable*
 
 ```vue
 <script setup lang="ts">
@@ -69,7 +69,7 @@ const formatDate = useFormatDate();
 
 Qual o problema nisso?
 
-Bem, é que a ideia por trás dos _composables_  é que eles usem a `Composition API` e no nosso exemplo, `useFormatDate` não faz uso de nenhuma função da `Composition API`, ou seja, não gerencia estado algum e se torna uma função sem estado. É assim que algumas libs funcionam como `date-fns` e `lodash`. Portanto, o ideal é que ela seja apenas uma função que ficaria ali no diretório `helpers`, `utils` ou qualquer outro. Mas ela não seria considerada uma função _composable_.
+Bem, é que a ideia por trás dos *composables* é que eles usem a `Composition API` e no nosso exemplo, `useFormatDate` não faz uso de nenhuma função da `Composition API`, ou seja, não gerencia estado algum e se torna uma função sem estado. É assim que algumas libs funcionam como `date-fns` e `lodash`. Portanto, o ideal é que ela seja apenas uma função que ficaria ali no diretório `helpers`, `utils` ou qualquer outro. Mas ela não seria considerada uma função *composable*.
 
 Vamos ver um outro exemplo então que faria mais sentido ser um composable.
 
@@ -134,8 +134,8 @@ const { x, y } = useMouse()
 <template>Mouse position is at: {{ x }}, {{ y }}</template>
 ```
 
-Percebeu o que fizemos? A ideia do _composable_ é ter funções que isolam o gerenciamento de estado e que podem ser reutilizadas em outros componentes. Observe que o gerenciamento do estado é feito com a `Composition API`.
+Percebeu o que fizemos? A ideia do *composable* é ter funções que isolam o gerenciamento de estado e que podem ser reutilizadas em outros componentes. Observe que o gerenciamento do estado é feito com a `Composition API`.
 
 ---
 
-<small>Exemplos tirados da documentação sobre [_composables_](https://vuejs.org/guide/reusability/composables.html#mouse-tracker-example)</small>
+Exemplos tirados da documentação sobre [*composables*](https://vuejs.org/guide/reusability/composables.html#mouse-tracker-example)

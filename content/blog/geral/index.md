@@ -1,11 +1,8 @@
 ---
-title: 'Geral'
-layout: 'page'
-type: 'index'
+title: Geral
+layout: page
+type: index
 ---
 
-::articles-list
----
-path: blog/geral
----
+::articles-list{path="blog/geral"}
 ::
