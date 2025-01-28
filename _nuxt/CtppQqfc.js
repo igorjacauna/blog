@@ -1,1 +1,0 @@
-import{k as o,c as t,e as c,a8 as r}from"./CTpVfJSI.js";const a={};function n(e,s){return t(),c("blockquote",null,[r(e.$slots,"default",{},void 0,!0)])}const l=o(a,[["render",n],["__scopeId","data-v-d4ddc2a1"]]);export{l as default};
