@@ -19,7 +19,7 @@ O Kork MicroKEY61 não vem com essa possibilidade de conectar um pedal de sustai
 
 No fundo, o sinal de sustain nada mais é do que um comando MIDI. Então pensei, dá pra fazer isso com uma placa simples como Arduino, ainda mais o Arduino Nano. Só que a última vez que programei em uma placa foi nunca... Mas em época de IA pra todo lado, claro que aproveitei e com ajuda do ChatGPT me aventurei por esse caminho.
 
-E não é que deu certo? E assim surgiu \[esse]\(<https://github.com/igorjacauna/usb-sustain-pedal>) pequeno código
+E não é que deu certo? E assim surgiu [esse](https://github.com/igorjacauna/usb-sustain-pedal) pequeno código
 
 O código é bem simples e o GPT fez questão de deixar tudo bem comentado.
 
