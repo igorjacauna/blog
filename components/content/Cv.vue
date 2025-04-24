@@ -72,6 +72,39 @@ const social = [
     icon: 'logos:twitter',
   },
 ]
+
+const npmPackages = [
+  {
+    name: '@igorjacauna/axios-dev-proxy',
+    url: 'https://www.npmjs.com/package/@igorjacauna/axios-dev-proxy',
+    description: 'Proxy para desenvolvimento com Axios',
+  },
+  {
+    name: 'reactmos',
+    url: 'https://www.npmjs.com/package/reactmos',
+    description: 'Um pequeno framework para criar SPAs modulares com React',
+  },
+  {
+    name: 'vite-plugin-react-modules',
+    url: 'https://www.npmjs.com/package/vite-plugin-react-modules',
+    description: 'Plugin para Vite que permite criar SPAs modulares com React',
+  },
+  {
+    name: '@igorjacauna/firebase-layer',
+    url: 'https://www.npmjs.com/package/@igorjacauna/firebase-layer',
+    description: 'Uma layer do Nuxt com funções para facilitar o uso do Firebase com Nuxt',
+  },
+  {
+    name: '@igorjacauna/eslint-config',
+    url: 'https://www.npmjs.com/package/@igorjacauna/eslint-config',
+    description: 'Configuração de ESLint para projetos Vue e React',
+  },
+  {
+    name: '@spalla-dev/starter',
+    url: 'https://www.npmjs.com/package/@spalla-dev/starter',
+    description: 'Prompt para criar projetos rapidamente a partir de templates.',
+  }
+];
 </script>
 <template>
   <div class="cv">
@@ -109,11 +142,9 @@ const social = [
         <p>
           Tenho projetos publicados que me ajudam a construir novas coisas, são ferramentas que poupam tempo como:
         </p>
-        <p>
-          <pre>@igorjacauna/eslint-config</pre> contém regras de ESLint que costumo usar. 
-        </p>
-        <p>
-          <pre>@spalla-dev/starter</pre> que é um prompt para criar projetos rapidamente a partir de templates.
+        <p v-for="(item, index) in npmPackages" :key="index">
+          <pre><a :href="item.url" target="_blank">{{ item.name }}</a></pre>
+          <p>{{ item.description }}</p>
         </p>
       </article>
       <article class="card experience">
