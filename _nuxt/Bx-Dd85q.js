@@ -1,0 +1,1 @@
+import{k as a,c as r,e as t,a8 as c}from"./BFHvHRIP.js";const n={};function o(e,s){return t(),r("em",null,[c(e.$slots,"default",{},void 0,!0)])}const f=a(n,[["render",o],["__scopeId","data-v-ca8a30fa"]]);export{f as default};
