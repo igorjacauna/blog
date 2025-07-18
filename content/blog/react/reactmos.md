@@ -1,0 +1,217 @@
+---
+date: 2025-07-16
+layout: article
+---
+
+# Reactmos
+
+Um mini framework para modularizar aplicações SPA com React
+
+## SPA React modularizado
+
+Inspirado um pouco nas [Layers do Nuxt](https://nuxt.com/docs/4.x/getting-started/layers). Procurei me aventurar e criar algo simples pra trabalhar com o React.
+
+A ideia era ter uma aplicaçãp SPA react que funcionasse bem sozinha, mas que poderia fazer um "extends" de outra aplicação. Onde seria possível acessar as páginas dessa outra aplicação.
+
+Usando Vite, comecei a desenhar um módulo virtual que pudesse ser o centralizador da configuração. A coisa foi evoluindo e culminou na criação desse mini framework que chamei de Reactmos, que vem de **REACTM**odule**S**
+
+## Como funciona
+
+Basicamente, o Reactmos é um SPA que consegue ler um arquivo usado como ponto de entrada de um módulo. Parecido com o `nuxt.config.ts`. E então ele carrega as rotas definidas no módulo. Além de ler também, no arquivo de ponto de entrada, o "extends" que esse módulo faz, o seja, quais outros módulos é preciso ler as rotas.
+
+## Isolamento
+
+Cada módulo, pode rodar individualmente. Basta rodar `pnpm dev`, por exemplo, que deve subir sem problemas.
+
+## Centralizar em um módulo só
+
+Você pode ter um módulo que faz extensão de todos os outros pra centralizar tudo que sua aplicação final precisa e ainda assim cada módulo continua funcionando individualmente
+
+Dois módulos podem fazer extensão do mesmo módulo sem problemas. No fim tudo é mesclado.
+
+## Como usar
+
+Mas sem enrolação, vamos ver como seria o uso.
+
+Rodando
+
+```bash
+pnpm create reactmos modulo-a
+```
+
+Isso vai criar nosso primeiro módulo. Perceba que temos nosso arquivo de ponto de entrada em `src/module.config.ts`. 
+
+Nesse arquivo definimos o nome do módulo, as rotas e outras coisas. E já temos uma rota para o caminho `/` que exibe a página `Welcome`.
+
+Agora vamos criar um segundo módulo em outro diretório, claro, que não seja do `module-a`
+
+```bash
+pnpm create reactmos modulo-b
+```
+
+A estrutura é muito similar ao `module-a`. Mas vamos modificar o `src/module.config.ts` do `module-b`. A página `Welcome` dele vai ficar no camminho `/modulo-b`. Ficando mais ou menos assim:
+
+```ts [src/module.config.ts]
+import { ModuleConfig } from 'reactmos';
+import Welcome from './pages/Welcome';
+import App from './App';
+
+const module: ModuleConfig = {
+  moduleName: 'modulo-b',
+  root: App,
+  routes: () => {
+    return [
+      {
+        path: '/modulo-b',
+        Component: Welcome,
+      },
+    ];
+  },
+  hooks: {
+    'app:beforeRender': () => {
+      console.log('Before render')
+    }
+  }
+}
+
+export default module
+```
+
+Agora de volta ao `modulo-a`, vamos fazer extends do `modulo-b` nele.
+
+```ts [src/module.config.ts]
+import { ModuleConfig } from 'reactmos';
+import Welcome from './pages/Welcome';
+import App from './App';
+
+const module: ModuleConfig = {
+  moduleName: 'modulo-a',
+  root: App,
+  routes: () => {
+    return [
+      {
+        path: '/',
+        Component: Welcome,
+      },
+    ];
+  },
+  hooks: {
+    'app:beforeRender': () => {
+      console.log('Before render')
+    }
+  },
+  extends: [
+    '../modulo-b' // Aqui fazemos o extends...
+  ]
+}
+
+export default module
+```
+
+Pronto. Agora só rodar `pnpm dev` no `modulo-a` pra ver que é possível acessar `/` e `/modulo-b`.
+
+E se modificar o `Welcome` do `modulo-b` você verá que vai refletir imediatamente, se estiver na rota `/modulo-b`
+
+## Ué, mas onde ficam as rotas do `react-router`?
+
+Observe que no `module.config.ts` a gente tem a opção `root`. Ela define o nosso componente de entrada da aplicação.
+
+Se olhar o `App.tsx` do `modulo-a`, vemos que ele importa o componente `Pages` do `reactmos` que já reune todas as rotas, incluindo dos módulos extendidos.
+
+```tsx [App.tsx]
+import { Pages } from 'reactmos';
+
+export default function App() {
+  return <Pages />
+}
+```
+
+Mas se você quiser fazer isso por conta própria, o `reactmos` também fornece uma função que retorna um objeto com todas as mesmas rotas pra você montar como quiser. Por exemplo, se quiser montar um provider de autenticação.
+
+Digamos que você crie seu próprio componente `Pages.tsx` que irá reunir as rotas. Seria mais ou menos assim:
+
+```tsx
+import { BrowserRouter, useRoutes, type RouteObject } from 'react-router'
+import { getRoutes } from 'virtual:modules'
+
+import AuthProvider from './auth';
+
+type AppRoutesProps = {
+  pages: RouteObject[]
+}
+function AppRoutes({ pages }: AppRoutesProps) {
+  return useRoutes(pages)
+}
+
+export default function Pages() {
+  const pages = getRoutes();
+  return (
+    <BrowserRouter>
+      <AuthProvider>
+        <AppRoutes pages={pages} />
+      </AuthProvider>
+    </BrowserRouter>
+  )
+}
+```
+
+## E se a lógica de autenticação estiver em outro módulo?
+
+O `module.config.ts` tem uma opção chamada `extras` onde você fornece qualquer coisa para ser acessado por outros módulos através da função `getExtras` do `reactmos`
+
+Por exemplo, alterando o nosso componente `Pages.tsx` caso o `modulo-b` fornecesse a lógica de autenticação.
+
+No `modulo-b` o `module.config.ts` dele teria:
+
+```ts
+import { AuthProvider } from './auth';
+
+const module = {
+  moduleName: 'modulo-b',
+  ...
+  extras: {
+    'AuthProvider': AuthProvider,
+  }
+}
+
+export default module
+```
+
+Então, no nosso componente `Page.tsx` no `modulo-a` usaríamos assim:
+
+```tsx
+import { BrowserRouter, useRoutes, RouteObject } from 'react-router'
+import { getExtras } from 'reactmos'
+import { getRoutes } from 'virtual:modules'
+
+type AppRoutesProps = {
+  pages: RouteObject[]
+}
+function AppRoutes({ pages }: AppRoutesProps) {
+  return useRoutes(pages)
+}
+
+export default function Pages() {
+  const pages = getRoutes();
+  const { AuthProvider } = getExtras('modulo-b');
+  return (
+    <BrowserRouter>
+      <AuthProvider>
+        <AppRoutes pages={pages} />
+      </AuthProvider>
+    </BrowserRouter>
+  )
+}
+```
+
+## Plugin
+
+O Reactmos usa um plugin Vite, `vite-plugin-react-modules`, pra fazer parte da mágica. Você pode usar a lógica de modularização na sua aplicação SPA pré-existente se, é claro, estiver usando o `react-router`. Confira como usar o plugin [aqui](https://reactmos.dev/plugin).
+
+O uso apenas do plugin deixa de lado algumas coisas que o Reactmos tem, como definir o `root` e os gatilhos de ciclo de vida. E cada módulo precisa estar configurado como esperado para o plugin funcionar. Ou seja, precisa ter o arquivo de ponto de entrada certinho. E pra deixar também cada módulo funcionando individualmente precisa de ajustes pra isso dar certo.
+
+## Tem mais?
+
+Temos gatilhos de ciclo de vida, alteração de configuração do Vite, HTML de pre-loading (é exibido enquanto o Reactmos reúne as configurações dos módulos)...
+
+Você pode ver a [documentação](https://reactmos.dev/) do Reactmos para saber mais sobre como co

@@ -142,10 +142,10 @@ const npmPackages = [
         <p>
           Tenho projetos publicados que me ajudam a construir novas coisas, são ferramentas que poupam tempo como:
         </p>
-        <p v-for="(item, index) in npmPackages" :key="index">
+        <div v-for="(item, index) in npmPackages" :key="index">
           <pre><a :href="item.url" target="_blank">{{ item.name }}</a></pre>
           <p>{{ item.description }}</p>
-        </p>
+        </div>
       </article>
       <article class="card experience">
         <h2>Experiência</h2>
