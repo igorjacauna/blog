@@ -1,0 +1,1 @@
+import{d as a,c as o,a8 as s,e as d,k as n}from"./Br1EYXfV.js";const l=["type","disabled"],c=a({__name:"Button",props:{type:{type:String,default:"submit"},disabled:{type:Boolean,default:!1}},setup(e){return(t,p)=>(d(),o("button",{type:e.type,disabled:e.disabled},[s(t.$slots,"default",{},void 0,!0)],8,l))}}),_=n(c,[["__scopeId","data-v-bd00a0cd"]]);export{_ as default};
