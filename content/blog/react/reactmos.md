@@ -141,7 +141,7 @@ Digamos que você crie seu próprio componente `Pages.tsx` que irá reunir as ro
 
 ```tsx
 import { BrowserRouter, useRoutes, type RouteObject } from 'react-router'
-import { getRoutes } from 'virtual:modules'
+import { getRoutes } from 'reactmos'
 
 import AuthProvider from './auth';
 
@@ -191,7 +191,7 @@ Então, no nosso componente `Page.tsx` no `modulo-a` usaríamos assim:
 ```tsx
 import { BrowserRouter, useRoutes, RouteObject } from 'react-router'
 import { getExtras } from 'reactmos'
-import { getRoutes } from 'virtual:modules'
+import { getRoutes } from 'reactmos'
 
 type AppRoutesProps = {
   pages: RouteObject[]
