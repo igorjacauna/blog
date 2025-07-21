@@ -108,6 +108,15 @@ const module: ModuleConfig = {
 export default module
 ```
 
+O legal é que você pode fazer extends também de um pacote publicado em algum registry.
+
+```ts
+export default {
+  ...,
+  extends: ['pacote-npm']
+}
+```
+
 Pronto. Agora só rodar `pnpm dev` no `modulo-a` pra ver que é possível acessar `/` e `/modulo-b`.
 
 E se modificar o `Welcome` do `modulo-b` você verá que vai refletir imediatamente, se estiver na rota `/modulo-b`
@@ -203,6 +212,15 @@ export default function Pages() {
   )
 }
 ```
+
+## Dependências
+
+Quanto a dependências que não são comuns entre os módulos, temos 2 pontos a levantar aqui.
+
+Se você usa caminho relativo para fazer extends, então é necessário que o módulo que faz _extends_ tenha as dependências do módulo extendido instaladas também.
+
+Agora, se você usa um pacote publicado pra fazer extends, basta garantir que esse pacote tenha as suas dependências corretamente declaradas no `package.json`
+
 
 ## Plugin
 
