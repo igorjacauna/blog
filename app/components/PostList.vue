@@ -8,6 +8,13 @@ interface PostItem {
 
 const props = defineProps<{ posts: PostItem[], groupByYear?: boolean }>()
 
+function meta(post: PostItem) {
+  const parts = [props.groupByYear ? formatShortDate(post.date) : `${formatShortDate(post.date)} ${yearOf(post.date)}`]
+  if (post.readingTime)
+    parts.push(`${post.readingTime} min`)
+  return parts.join(' · ')
+}
+
 const groups = computed(() => {
   if (!props.groupByYear)
     return [{ year: null as number | null, posts: props.posts }]
@@ -24,19 +31,18 @@ const groups = computed(() => {
 
 <template>
   <div>
-    <section v-for="group in groups" :key="group.year ?? 'all'" class="relative">
-      <div v-if="group.year" class="year select-none pointer-events-none" aria-hidden="true">
-        {{ group.year }}
-      </div>
-      <h2 v-if="group.year" class="sr-only">
+    <section v-for="group in groups" :key="group.year ?? 'all'" :class="group.year ? 'mb-10' : ''">
+      <h2 v-if="group.year" class="year font-hand">
         {{ group.year }}
       </h2>
-      <ul class="relative flex flex-col gap-1" :class="group.year ? 'pt-14 pb-8' : ''">
+      <ul>
         <li v-for="post in group.posts" :key="post.path">
-          <NuxtLink :to="post.path" class="post-row group flex flex-col sm:flex-row sm:items-baseline gap-x-3 gap-y-0.5 py-2">
-            <span class="text-[1.05rem] text-[var(--fg)] group-hover:text-[var(--accent)] transition-colors">{{ post.title }}</span>
-            <span class="text-sm text-[var(--fg-faint)] whitespace-nowrap tabular-nums">
-              {{ formatShortDate(post.date) }}<template v-if="post.readingTime"> · {{ post.readingTime }} min</template>
+          <NuxtLink :to="post.path" class="post-row group flex flex-wrap items-baseline justify-between gap-x-6 gap-y-0.5 py-4 border-b border-[var(--border)]">
+            <span class="text-[1.2rem] font-medium text-[var(--fg)]">
+              <span class="title">{{ post.title }}</span>
+            </span>
+            <span class="font-hand text-[1.35rem] text-[var(--fg-faint)] whitespace-nowrap">
+              {{ meta(post) }}
             </span>
           </NuxtLink>
         </li>
@@ -47,17 +53,21 @@ const groups = computed(() => {
 
 <style scoped>
 .year {
-  position: absolute;
-  top: -0.5rem;
-  left: -1.5rem;
-  font-size: 7rem;
-  font-weight: 800;
-  line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--border-strong);
-  opacity: 0.55;
+  margin: 0 0 0.25rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  transform: rotate(-2deg);
+  transform-origin: left;
+  display: inline-block;
 }
-@media (max-width: 640px) {
-  .year { left: -0.25rem; font-size: 5rem; }
+.title {
+  background: linear-gradient(transparent 55%, var(--marker) 55%) no-repeat left / 0% 100%;
+  transition: background-size 0.35s ease;
+  padding: 0 2px;
+}
+.post-row:hover .title,
+.post-row:focus-visible .title {
+  background-size: 100% 100%;
 }
 </style>

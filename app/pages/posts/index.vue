@@ -10,11 +10,11 @@ defineOgImage('Post', { title: 'Posts', description: 'Vue, Nuxt, React, ferramen
 
 <template>
   <div class="container-text">
-    <h1 class="text-3xl font-bold tracking-tight mb-2">
+    <h1 class="font-serif text-[3.2rem] leading-none mb-3">
       Posts
     </h1>
-    <p class="text-[var(--fg-muted)] mb-10">
-      Também dá para acompanhar pelo <a href="/feed.xml" class="underline decoration-[var(--border-strong)] underline-offset-3 hover:text-[var(--fg)]">RSS</a>.
+    <p class="text-[var(--fg-muted)] mb-12">
+      Tudo o que já escrevi, do mais novo ao mais antigo. <span class="hand-note text-[1.4rem] inline-block -rotate-1">dá pra seguir pelo <a href="/feed.xml" class="underline underline-offset-4">RSS</a></span>
     </p>
     <PostList v-if="posts" :posts="posts" group-by-year />
   </div>

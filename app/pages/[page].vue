@@ -15,11 +15,14 @@ defineOgImage('Post', { title: page.value.title, description: page.value.descrip
 
 <template>
   <div v-if="page" class="container-text">
-    <h1 class="text-3xl font-bold tracking-tight mb-8">
+    <h1 class="font-serif text-[3.2rem] leading-none mb-8">
       {{ page.title }}
     </h1>
     <div class="prose">
       <ContentRenderer :value="page" />
     </div>
+    <p v-if="page.note" class="hand-note mt-6 -rotate-2 origin-left">
+      {{ page.note }}
+    </p>
   </div>
 </template>

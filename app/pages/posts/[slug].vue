@@ -61,22 +61,22 @@ defineOgImage('Post', {
 <template>
   <article v-if="post" class="container-text relative">
     <header class="mb-10">
-      <h1 class="text-3xl sm:text-[2.4rem] font-bold tracking-tight leading-tight mb-3">
+      <h1 class="font-serif text-[2.6rem] sm:text-[3.4rem] leading-[1.05] mb-4">
         {{ post.title }}
       </h1>
-      <p class="text-[var(--fg-faint)] text-[0.95rem] flex flex-wrap gap-x-2">
+      <p class="font-hand text-[1.45rem] text-[var(--fg-faint)] flex flex-wrap gap-x-2">
         <time :datetime="new Date(post.date).toISOString()">{{ formatDate(post.date) }}</time>
         <span v-if="post.readingTime">· {{ post.readingTime }} min de leitura</span>
         <span v-if="post.draft" class="text-amber-600">· rascunho</span>
       </p>
       <p v-if="post.tags?.length" class="mt-3 flex flex-wrap gap-2">
-        <span v-for="tag in post.tags" :key="tag" class="text-xs px-2 py-0.5 rounded-full bg-[var(--bg-soft)] text-[var(--fg-muted)]">#{{ tag }}</span>
+        <span v-for="tag in post.tags" :key="tag" class="tag">#{{ tag }}</span>
       </p>
     </header>
 
     <aside v-if="toc.length > 1" class="toc hidden xl:block">
-      <p class="text-xs uppercase tracking-widest text-[var(--fg-faint)] font-semibold mb-3">
-        Neste post
+      <p class="hand-note text-[1.4rem] mb-3 -rotate-2 origin-left">
+        neste post ↓
       </p>
       <ul class="space-y-1.5">
         <li v-for="link in toc" :key="link.id">
@@ -106,12 +106,12 @@ defineOgImage('Post', {
 
       <nav v-if="surround" class="mt-10 grid sm:grid-cols-2 gap-4">
         <NuxtLink v-if="surround[1]" :to="surround[1].path" class="surround">
-          <span class="text-xs text-[var(--fg-faint)]">← Mais antigo</span>
+          <span class="font-hand text-[1.25rem] text-[var(--fg-faint)]">← mais antigo</span>
           <span>{{ surround[1].title }}</span>
         </NuxtLink>
         <span v-else />
         <NuxtLink v-if="surround[0]" :to="surround[0].path" class="surround sm:text-right">
-          <span class="text-xs text-[var(--fg-faint)]">Mais recente →</span>
+          <span class="font-hand text-[1.25rem] text-[var(--fg-faint)]">mais recente →</span>
           <span>{{ surround[0].title }}</span>
         </NuxtLink>
       </nav>
@@ -134,17 +134,27 @@ defineOgImage('Post', {
 .toc > ul {
   top: 4rem;
 }
+.tag {
+  font-size: 0.8rem;
+  padding: 0.1rem 0.55rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: 999px;
+  color: var(--fg-muted);
+}
 .surround {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  padding: 0.9rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: 0.6rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--card);
+  border: 1.5px solid var(--card-border);
+  border-radius: 4px;
+  box-shadow: 3px 3px 0 var(--shadow);
   color: var(--fg);
-  transition: border-color 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 .surround:hover {
-  border-color: var(--accent);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--accent);
 }
 </style>

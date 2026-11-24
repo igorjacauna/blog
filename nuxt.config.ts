@@ -88,6 +88,8 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       { name: 'Inter', provider: 'google', weights: [400, 500, 600, 700] },
+      { name: 'Instrument Serif', provider: 'google', weights: [400], styles: ['normal', 'italic'] },
+      { name: 'Caveat', provider: 'google', weights: [500, 700] },
       { name: 'JetBrains Mono', provider: 'google', weights: [400, 500] },
     ],
   },

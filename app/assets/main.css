@@ -1,26 +1,40 @@
+/* Caderno de rabiscos: papel pontilhado, tinta, caneta azul e marca-texto */
 :root {
-  --bg: #fdfdfc;
-  --bg-soft: #f4f4f2;
-  --fg: #1c1c1e;
-  --fg-muted: #56565c;
-  --fg-faint: #8a8a90;
-  --border: #e6e6e3;
-  --border-strong: #cfcfca;
-  --accent: #0f766e;
-  --code-bg: #f6f6f4;
+  --bg: #fbfaf5;
+  --dot: #d9d5ca;
+  --bg-soft: #f1eee6;
+  --card: #ffffff;
+  --fg: #22211f;
+  --fg-muted: #4f4c45;
+  --fg-faint: #6e6a61;
+  --border: #e3dfd4;
+  --border-strong: #c9c4b7;
+  --accent: #2442c4;
+  --marker: #ffe27a;
+  --shadow: #22211f;
+  --card-border: #22211f;
+  --code-bg: #f5f3ec;
+  --font-hand: Caveat, 'Comic Sans MS', cursive;
+  --font-serif: 'Instrument Serif', Georgia, serif;
   color-scheme: light;
 }
 
+/* Caderno à noite: papel grafite, tinta clara, caneta azul luminosa */
 html.dark {
-  --bg: #0f1011;
-  --bg-soft: #18191b;
-  --fg: #ececee;
-  --fg-muted: #a6a6ad;
-  --fg-faint: #75757c;
-  --border: #26272a;
-  --border-strong: #3a3b3f;
-  --accent: #2dd4bf;
-  --code-bg: #151617;
+  --bg: #1a1916;
+  --dot: #353329;
+  --bg-soft: #24231f;
+  --card: #22211d;
+  --fg: #ece8df;
+  --fg-muted: #bdb8ab;
+  --fg-faint: #9a958a;
+  --border: #33312b;
+  --border-strong: #4a473f;
+  --accent: #93a6ff;
+  --marker: rgba(255, 214, 90, 0.32);
+  --shadow: #0b0a09;
+  --card-border: #5e5a50;
+  --code-bg: #201f1b;
   color-scheme: dark;
 }
 
@@ -34,8 +48,28 @@ html {
 }
 
 body {
-  background: var(--bg);
   margin: 0;
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--dot) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+.font-hand { font-family: var(--font-hand); }
+.font-serif { font-family: var(--font-serif); font-weight: 400; }
+
+/* Marca-texto: [texto]{.marker} no markdown */
+.marker, .prose mark {
+  background: linear-gradient(transparent 55%, var(--marker) 55%);
+  color: inherit;
+  padding: 0 2px;
+}
+
+/* Nota à mão na margem */
+.hand-note {
+  font-family: var(--font-hand);
+  color: var(--accent);
+  font-size: 1.6rem;
+  line-height: 1.2;
 }
 
 ::selection {
@@ -80,13 +114,13 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.01em;
   scroll-margin-top: 2rem;
 }
-.prose h2 { font-size: 1.45em; margin: 2.2em 0 0.8em; }
+.prose h2 { font-family: var(--font-serif); font-weight: 400; font-size: 2em; letter-spacing: 0; margin: 1.8em 0 0.6em; }
 .prose h3 { font-size: 1.2em; margin: 1.9em 0 0.6em; }
 .prose h4 { font-size: 1.05em; margin: 1.6em 0 0.5em; }
 .prose h2 a, .prose h3 a, .prose h4 a { color: inherit; border: 0; }
 .prose a {
   color: var(--fg);
-  border-bottom: 1px solid var(--border-strong);
+  border-bottom: 1.5px solid var(--accent);
   transition: border-color 0.2s, color 0.2s;
 }
 .prose a:hover { color: var(--accent); border-color: var(--accent); }
@@ -96,13 +130,16 @@ a { color: inherit; text-decoration: none; }
 .prose li { margin: 0.35em 0; }
 .prose li::marker { color: var(--fg-faint); }
 .prose blockquote {
-  padding-left: 1em;
-  border-left: 3px solid var(--border-strong);
+  margin-left: 0;
+  padding: 0.2em 0 0.2em 1em;
+  border-left: 2px dashed var(--accent);
   color: var(--fg-muted);
+  font-family: var(--font-serif);
+  font-size: 1.2em;
   font-style: italic;
 }
 .prose hr { border: 0; border-top: 1px solid var(--border); margin: 3em 0; }
-.prose img { max-width: 100%; height: auto; border-radius: 0.5rem; }
+.prose img { max-width: 100%; height: auto; border-radius: 4px; border: 1.5px solid var(--card-border); box-shadow: 4px 4px 0 var(--shadow); }
 .prose iframe { max-width: 100%; border: 0; border-radius: 0.5rem; }
 .prose table { width: 100%; border-collapse: collapse; font-size: 0.92em; display: block; overflow-x: auto; }
 .prose th, .prose td { padding: 0.5em 0.75em; border-bottom: 1px solid var(--border); text-align: left; }

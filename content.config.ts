@@ -17,6 +17,13 @@ export default defineContentConfig({
     pages: defineCollection({
       type: 'page',
       source: 'pages/*.md',
+      schema: z.object({
+        // Nota escrita "à mão" (fonte Caveat) logo abaixo do texto.
+        note: z.string().optional(),
+        // Desenho seu (ex.: /rabiscos/eu.png) e a legenda dele.
+        doodle: z.string().optional(),
+        doodleCaption: z.string().optional(),
+      }),
     }),
     projects: defineCollection({
       type: 'data',
