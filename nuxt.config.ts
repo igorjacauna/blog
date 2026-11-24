@@ -141,6 +141,10 @@ export default defineNuxtConfig({
           },
         ],
         observability: { enabled: true },
+        routes: [
+          { pattern: 'igorjacauna.com.br', custom_domain: true },
+          { pattern: 'www.igorjacauna.com.br', custom_domain: true },
+        ],
       },
     },
     prerender: {
