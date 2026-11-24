@@ -1,0 +1,64 @@
+groups:
+  - title: Ferramentas
+    items:
+      - name: axios-dev-proxy
+        description: Interceptor do Axios para redirecionar requisições e devolver respostas mockadas durante o desenvolvimento do frontend.
+        url: https://github.com/igorjacauna/axios-dev-proxy
+        npm: "@igorjacauna/axios-dev-proxy"
+        icon: i-ph-arrows-left-right
+      - name: reactmos
+        description: Mini framework para criar SPAs React em módulos, inspirado nas Layers do Nuxt. Vem com o vite-plugin-react-modules.
+        url: https://github.com/igorjacauna/reactmos
+        npm: reactmos
+        icon: i-ph-puzzle-piece
+      - name: eslint-config
+        description: Meus presets de ESLint para projetos Vue e React.
+        url: https://github.com/igorjacauna/eslint-config
+        npm: "@igorjacauna/eslint-config"
+        icon: i-ph-check-square
+  - title: Nuxt
+    items:
+      - name: skills
+        description: Skills para agentes de IA em projetos Nuxt 4 com Firebase Auth e Supabase.
+        url: https://github.com/igorjacauna/skills
+        icon: i-ph-sparkle
+      - name: firebase-layer
+        description: Uma layer do Nuxt para usar Firebase sem repetir a configuração em cada projeto.
+        url: https://github.com/igorjacauna/firebase-layer
+        npm: "@igorjacauna/firebase-layer"
+        icon: i-ph-stack
+      - name: nuxt-tauri
+        description: Template de Nuxt com Tauri para desktop e mobile.
+        url: https://github.com/igorjacauna/nuxt-tauri
+        icon: i-ph-device-mobile
+  - title: Experimentos
+    items:
+      - name: coolify-apps
+        description: Apps self-hosted no meu servidor ARM com Coolify, como um separador de stems com Demucs, MDX-Net e RoFormer.
+        url: https://github.com/igorjacauna/coolify-apps
+        icon: i-ph-waveform
+      - name: usb-sustain-pedal
+        description: Pedal de sustain USB para controlador MIDI, feito com um Arduino Nano.
+        url: https://github.com/igorjacauna/usb-sustain-pedal
+        icon: i-ph-piano-keys
+      - name: tauri-firebase-login
+        description: Template de login com Firebase em apps Tauri, usando OAuth pelo navegador.
+        url: https://github.com/igorjacauna/tauri-firebase-login
+        icon: i-ph-sign-in
+contributions:
+  - repo: unjs/c12
+    title: "fix: extend with explicit extensions only"
+    url: https://github.com/unjs/c12/pull/276
+    date: "2025-10"
+  - repo: nitrojs/nitro
+    title: "feat: allow customizing apiBaseURL, apiDir and routesDir"
+    url: https://github.com/nitrojs/nitro/pull/1763
+    date: "2024-04"
+  - repo: nitrojs/nitro
+    title: "fix: add .tsx and .jsx to node-resolve extensions"
+    url: https://github.com/nitrojs/nitro/pull/2398
+    date: "2024-04"
+  - repo: h3js/h3
+    title: "fix(readRawBody): handle body as object"
+    url: https://github.com/h3js/h3/pull/403
+    date: "2023-06"

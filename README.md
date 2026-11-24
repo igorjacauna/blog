@@ -1,57 +1,36 @@
-# Alpine Starter
+# igorjacauna.com.br
 
-Starter template for [Alpine](https://alpine.nuxt.space).
+Meu site e blog. Feito com [Nuxt 4](https://nuxt.com), [Nuxt Content](https://content.nuxt.com), [Nuxt Studio](https://nuxt.studio) e [UnoCSS](https://unocss.dev), publicado no Cloudflare Workers.
 
-## Clone
+## Escrever um post
 
-Clone the repository (using `nuxi`):
+Crie `content/posts/<slug>.md`:
 
-```bash
-npx nuxi init -t themes/alpine
+```md
+---
+title: Título do post
+description: Uma frase que aparece na lista, no RSS e na imagem de prévia.
+date: 2026-11-24
+tags: [nuxt, vue]
+draft: true   # tire quando for publicar
+---
+
+Texto em markdown...
 ```
 
-## Setup
+Ou edite direto no navegador em `/_studio` (login com GitHub). O Studio faz commit na branch `v2` e o deploy roda sozinho.
 
-Install dependencies:
+Componentes disponíveis no markdown: `::alert{type="info|warning|success|danger"}`, `:hover3d`, `:virtual-list`.
+
+## Desenvolvimento
 
 ```bash
 pnpm install
+pnpm dev        # http://localhost:3000
+pnpm build      # gera .output (Cloudflare Workers + D1)
+pnpm deploy     # build + wrangler deploy
 ```
 
-## Development
+## Licença
 
-```bash
-pnpm dev
-```
-
-## Edge Side Rendering
-
-Can be deployed to Vercel Functions, Netlify Functions, AWS, and most Node-compatible environments.
-
-Look at all the available presets [here](https://v3.nuxtjs.org/guide/deploy/presets).
-
-```bash
-pnpm build
-```
-
-## Static Generation
-
-Use the `generate` command to build your application.
-
-The HTML files will be generated in the .output/public directory and ready to be deployed to any static compatible hosting.
-
-```bash
-pnpm generate
-```
-
-## Preview build
-
-You might want to preview the result of your build locally, to do so, run the following command:
-
-```bash
-pnpm preview
-```
-
----
-
-For a detailed explanation of how things work, check out [Alpine](https://alpine.nuxt.space).
+Textos e imagens sob [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br).
