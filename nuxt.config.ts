@@ -142,6 +142,8 @@ export default defineNuxtConfig({
         ],
         observability: { enabled: true },
         workers_dev: true,
+        // Passa pelo Worker antes dos arquivos estáticos para o redirect de www/http funcionar.
+        assets: { run_worker_first: true },
         routes: [
           { pattern: 'igorjacauna.com.br', custom_domain: true },
           { pattern: 'www.igorjacauna.com.br', custom_domain: true },
